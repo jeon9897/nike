@@ -1,0 +1,308 @@
+@charset "utf-8";
+
+/* ----------------------------------- 0. 메인 -----------------------------------*/
+
+/* 메인배너 - iframe 영상 */
+.main_banner {width: 100%; height: 100vh; /* 뷰포트 전체 */ position: relative; overflow: hidden;}
+.main_banner iframe {position: absolute; top: 50%; left: 50%;
+  width: 200%; height: 120%; /* 여백 없도록 확대 */
+  transform: translate(-50%, -50%);
+  pointer-events: none; /* 유튜브 UI가 뜨지 않도록 막기 */}
+
+/* 메인배너 - 타이틀 */
+.main_banner #txt_con > h2, .main_banner #txt_con > p {
+  position: absolute; color: #ffffff; z-index: 10; left: 50%; transform: translate(-50%,-50%); text-align: center;
+  width:100%;
+  /* animation:txt_ani infinite 30s;*/
+  opacity:0.9; 
+}
+
+/* @keyframes txt_ani{
+  0%{display:none;}
+  2%{display:block;}
+  87.33%{display:none;}
+  100%{display:none;}
+} */
+
+.main_banner #txt_con > h2 {
+  font-size: 58px; line-height: 150%; top:45%;}
+.main_banner #txt_con > h2 > span {
+  display: block; font-weight: 900; font-size: 120px; line-height: 120%;}
+.main_banner #txt_con > p {bottom:16%; font-family: "AppleSDGothicNeo"; font-weight: 400; font-size: 21px; line-height: 170%;}
+.main_banner #txt_con > p > img {transform: translateY(40px); animation: bounce_icon infinite 3s;}
+
+@keyframes bounce_icon {
+  0% {transform: translateY(40px);}
+  50% {transform: translateY(60px);}
+  100% {transform: translateY(40px);}
+}
+
+/* 헤더와 합쳐지는 네비게이션 */
+nav {background-color: #000; color: #fff; position: sticky; top: 0; z-index: 9999;}
+nav > ul {color: #fff; justify-content: center; gap: 70px; cursor: pointer; background-color: #000; z-index: 999999;}
+nav > ul li a {color: #fff; font-family: "AppleSDGothicNeo"; font-weight: 400; font-size: 18px; letter-spacing: -0.5px; z-index: 9999999; background-color: #000;}
+
+
+/* ----------------------------------- 1. 철학 -----------------------------------*/
+
+.branding {width: 100%; position: relative; display: flex; box-sizing: border-box; overflow: hidden; padding-top: 250px;}
+.branding > h2 {font-size: 66px; font-weight: 700; letter-spacing: -2px; line-height: 100%; position: relative;}
+.branding > h2 > span {font-size: 30px; font-weight: 100; color: var(--txt_gray_light); display: block; letter-spacing: 0;}
+.branding > h2 > img {position: absolute; top: -100px; left: 0; }
+.branding .infinite_txt p {font-size: 120px; font-weight: 900; line-height: 100%; color: var(--txt_gray_dark); line-height: 0.75; margin-left: -10px; white-space: nowrap; /* 텍스트를 강제로 한 줄로 유지 */}
+
+.branding .right {margin-left: 197px;}
+
+/* 무한 스크롤 텍스트 */
+.branding .infinite_txt {position: absolute; bottom: -7px; left: 0; overflow: hidden; width: 100%;}
+
+.branding .infinite_txt p {
+  display: inline-block;
+  white-space: nowrap; 
+  font-size: 120px;
+  font-weight: 900;
+  color: var(--txt_gray_dark);
+  line-height: 0.75;
+  animation: scrollText 40s linear infinite; /* 20초 동안 무한 반복 */
+  transform: translateX(0);
+}
+
+@keyframes scrollText {
+  0% {
+    transform: translateX(0);
+  }
+  100% {
+    transform: translateX(-50%); /* 두 번 반복한 텍스트의 절반만 이동 */
+  }
+}
+
+
+/* ----------------------------------- 중앙 이미지 -----------------------------------*/
+
+.mid_img {
+  width: 100%; 
+  height: 100vh;
+  overflow: hidden;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  position: relative; /* fixed 제거, relative로 변경 */
+  /* fixed 관련 속성들 제거 */
+}
+
+.mid_img > img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  transform: scale(3.2);
+  transition: transform 0.2s ease-out;
+}
+
+/* 스크롤 고정 시에만 화면 전체 덮기 */
+.mid_img.scroll-active {
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100vw;
+  height: 100vh;
+  z-index: 1000;
+}
+
+.mid_img.scroll-active {
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100vw;
+  height: 100vh;
+  z-index: 1000;
+  background: #000; /* 검은 배경 추가로 뒤 콘텐츠 완전 차단 */
+}
+
+body.scroll-locked {
+  overflow: hidden;
+  height: 100vh;
+  position: fixed; /* body도 완전 고정 */
+  width: 100%;
+}
+
+/* CSS에 배경 차단 추가 */
+.mid_img.scroll-active {
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100vw;
+  height: 100vh;
+  z-index: 1000;
+  background: #000; /* 검은 배경 추가로 뒤 콘텐츠 완전 차단 */
+}
+
+/* 스크롤 막힘 상태에서 body 완전 고정 */
+body.scroll-locked {
+  overflow: hidden;
+  height: 100vh;
+  position: fixed; /* body도 완전 고정 */
+  width: 100%;
+}
+
+/* ----------------------------------- 2. 혁신 -----------------------------------*/
+
+.innovation {padding-top: 210px;}
+.innovation > ul {display: flex; justify-content: space-between;}
+.innovation > ul li {width: 520px; height: 480px; border-radius: 15px; overflow: hidden; position: relative; cursor: pointer;}
+.innovation > ul li > div {width: 100%; z-index: 5; position: absolute; bottom: 20%; left: 50%; transform: translate(-50%, 50%); color: var(--main_black);}
+.innovation > ul li > div h3 {font-size: 32px; line-height: 70px; font-weight: 600;}
+.innovation > ul li > div p {line-height: 150%; font-weight: 400;}
+
+.innovation > ul li img {width: 100%; transition: 0.5s; object-fit: cover; transform: scale(102%);}
+.innovation > ul li img:hover {width: 100%; transform: scale(110%); filter: saturate(1.2);}
+
+/* ----------------------------------- 3. 파트너쉽 -----------------------------------*/
+
+.ambassador {position: relative; padding-top: 120px;}
+.ambassador > p {font-size: 22px; margin: 30px 0 80px; font-weight: 600;}
+.ambassador > p > span {font-weight: 100; margin-left: 15px;}
+/* .ambassador > p > span::before {content: ''; display: inline-block; height: 18px; width: 2px; margin: -2px 20px -2px 18px; background: var(--txt_gray_dark);} */
+
+
+/* 선수 이름 목록 */
+.ambassador ul {display: flex; align-items: flex-start; /* 글자 폭만큼만 차지 */ flex-direction: column; gap: 35px;}
+.ambassador ul li {font-size: 64px; font-weight: 100; line-height: 100%; color: var(--txt_gray_dark); cursor: pointer; display: inline-block; transition: all 0.5s ease; text-transform: uppercase;}
+
+/* 호버 상태 */
+.ambassador ul li:hover, .ambassador ul li.active {font-weight: 600; color: var(--main_white);}
+
+/* 선수 정보 - 이미지 교체 */
+.change_wrap > img {position: absolute; top: 95px; right: 150px;}
+.change_wrap img.hero-img {position: absolute; top: 0; left: 0; border-radius: 15px; transition: opacity 0.5s ease-in-out;}
+.change_wrap img.bottom {opacity: 0;} /* 처음에는 안 보이게 */
+
+/* 선수 이미지 스타일 - 자바스크립트와 시간/속도 맞추기 */
+.change_wrap img {border-radius: 15px; transition: opacity 0.5s ease-in-out;}
+
+/* 선수 정보 텍스트 컨테이너 */
+.change_wrap > dl {position: absolute; bottom: 220px; left: 1255px; display: flex;     align-items: flex-start; flex-direction: column;}
+.change_wrap > dl dt, .change_wrap > dl dd {background: #000; display: inline-block; margin-bottom: -4px; color: #fff;}
+.change_wrap > dl dt {font-size: 26px; padding: 7px; font-weight: 500;}
+.change_wrap > dl dd {font-size: 16px; padding: 2px 7px; font-weight: 500;}
+.change_wrap > dl dd:last-child {margin-top: 35px; font-weight: 500;}
+
+/* 선수 이름 (dt) 초기 상태 - 오른쪽에 숨김 */
+.change_wrap dt {font-size: 36px; font-weight: 700; margin-bottom: 10px; opacity: 0;
+  transform: translateX(100px); /* 오른쪽으로 100px 이동 */
+  transition: 0.3s ease;
+}
+
+/* 선수 정보 (dd) 초기 상태 - 오른쪽에 숨김 */
+.change_wrap dd {font-size: 18px; color: var(--txt_gray_light); margin: 8px 0; opacity: 0; transform: translateX(100px); transition: 0.6s ease; 
+}
+.change_wrap dd:last-of-type {font-size: 20px;}
+
+
+/* ========== 애니메이션 활성화 - 오른쪽에서 순차적으로 등장 ========== */
+.change_wrap.active dt {
+  opacity: 1; /* 완전 불투명 */
+  transform: translateX(0); /* 원래 위치로 */
+}
+
+.change_wrap.active dd:nth-of-type(1) {
+  opacity: 1;
+  transform: translateX(0);
+  transition-delay: 0.1s; 
+}
+
+.change_wrap.active dd:nth-of-type(2) {
+  opacity: 1;
+  transform: translateX(0);
+  transition-delay: 0.2s; 
+}
+
+.change_wrap.active dd:nth-of-type(3) {
+  opacity: 1;
+  transform: translateX(0);
+  transition-delay: 0.3s; 
+}
+
+/* 장식 요소 */
+.ambassador .bg-logo {position: absolute; top: -50px; right: 245px; z-index: -1;}
+.ambassador .deco {position: absolute; top: 5px; right: 600px; animation: rotate360 10s linear infinite;}
+
+@keyframes rotate360 {
+  from { transform: rotate(0deg); }   /* 시작: 0도 */
+  to { transform: rotate(360deg); }   /* 끝: 360도 */
+}
+
+
+/* ----------------------------------- 4. 역사 -----------------------------------*/
+
+.history {width: 100%; height: 865px; background: url('../images/history_bg.jpg') no-repeat center center; background-size: 101%; padding-top: 140px; margin-top: 20px; box-sizing: border-box; position: relative;}
+.history > h2 {font-size: 68px; line-height: 120%; font-weight: 600;}
+.history > p {font-size: 21px; margin-top: 40px;}
+
+.history > .right {display: flex; align-items: flex-start; gap:45px; position: absolute; left: 940px; top: 155px;}
+.history > .right > img {margin-top: 10px;}
+.history > .right dt {font-family: 'Gmarket Sans', sans-serif !important; font-weight: 300; font-size: 38px; line-height: 170%;}
+.history > .right dd {margin-bottom: 75px;}
+.history > .right dd:last-child {margin-bottom: 0;}
+.history > .right dd > strong {font-size: 28px; font-weight: 700;}
+.history > .right dd > p {font-size: 18px; font-weight: 300;}
+
+/* DL 스크롤 컨테이너 */
+.history > .right dl {height: 600px; overflow-y: auto; padding-right: 35px; scrollbar-width: thin; scrollbar-color: #ffffff #00000000;}
+.history > .right dd:last-child {margin-bottom: 100px;}
+
+
+/* ----------------------------------- 5. 지속가능성 -----------------------------------*/
+
+.move ul {display: flex; justify-content: space-between; gap: 13px;}
+.move ul li {width: 386px; height: 420px; border-radius: 15px; display: flex; flex-direction: column; justify-content: center; align-items: center; gap: 7px;  cursor: pointer; transition: background-image 0.5s ease-in-out;
+  position: relative; /* 자식 요소인 ::before의 위치 기준이 됩니다 */
+  overflow: hidden; /* 이미지 오버레이가 li 밖으로 넘어가지 않게 합니다 */
+  z-index: 1; /* 콘텐츠(h3, p)가 오버레이 위로 올라오게 합니다 */}
+
+.move ul li > h3, .move ul li > p {z-index: 2; /* 배경 이미지 위로 올라오게 합니다 */ position: relative;}
+.move ul li > h3 {font-family: 'Gmarket Sans'; font-weight: 500; font-size: 60px; line-height: 100%;}
+.move ul li > h3 > span {font-size: 130px; line-height: 140%;}
+.move ul li > p {font-family: 'AppleSDGothicNeo'; line-height: 170%; font-size: 18px;}
+
+/* li 위에 띄울 가상 요소 */
+.move ul li::before {
+  content: '';
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background-repeat: no-repeat;
+  background-position: center center;
+  background-size: cover;
+  opacity: 0; /* 평소에는 투명하게 숨겨놓습니다 */
+  transition: opacity 0.5s ease-in-out; /* 이 opacity 속성을 트랜지션합니다 */
+  z-index: -1;
+}
+
+/* 활성화된 li에만 배경 이미지가 보이도록 설정 */
+.move ul li.active::before {opacity: 1;}
+/* .move ul li:hover::before {opacity: 1;} */
+
+/* 각 li에 맞는 이미지 URL과 hover 시의 효과 */
+.move ul li:first-child::before {background-image: url('../images/move_bg1.webp');}
+.move ul li:nth-child(2)::before {background-image: url('../images/move_bg2.webp');}
+.move ul li:nth-child(3)::before {background-image: url('../images/move_bg3.webp');}
+.move ul li:last-child::before {background-image: url('../images/move_bg4.webp');}
+
+
+/* ----------------------------------- 6. 시작하기 -----------------------------------*/
+.start {background: url('../images/footer_bg.jpg') no-repeat center center; background-size: cover; padding-top: 80px; position: relative;}
+
+.start > p {margin-bottom: 0;}
+.start > .btn_wrap {margin-top: 0; margin-bottom: 435px;}
+.start > .btn_wrap > .link_btn {padding: 10px 45px 10px 24px; font-size: 21px; margin-right: 15px; font-weight: 500;}
+.start > .btn_wrap > .link_btn:last-child {margin-right: 0;}
+
+
+footer {position: absolute; bottom: 28px; left: 50%; transform: translate(-50%, -50%);}
+footer p:first-child {font-weight: 600; color: var(--txt_gray_dark); margin-bottom: 3px;}
+footer p:last-child {font-size: 15px; font-family: "AppleSDGothicNeo"; color: var(--txt_gray_light);}
+
+
+

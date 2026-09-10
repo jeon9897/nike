@@ -1,0 +1,346 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>나이키 랜딩페이지</title>
+  <!-- 파비콘  -->
+  <link rel="icon" href="./images/logo_nike.ico" type="image/x-icon">
+  <!-- 1. css 초기화 -->
+  <link href="./css/reset.css" rel="stylesheet" type="text/css"> 
+  <!-- 2. css 공통서식 -->
+  <link href="./css/common.css" rel="stylesheet" type="text/css">
+  <!-- 3. css 메인콘텐츠 서식 -->
+  <link href="./css/main.css" rel="stylesheet" type="text/css">
+
+  <!-- 01/ 아이콘 - 폰트어썸 -->
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/7.0.1/css/all.min.css" integrity="sha512-2SwdPD6INVrV/lHTZbO2nodKhrnDdJK9/kg2XD1r9uGqPo1cUbujc+IYdlYdEErWNu69gVcYgdxlmVmzTWnetw==" crossorigin="anonymous" referrerpolicy="no-referrer" />
+  <!-- 02/ 스와이퍼 슬라이드 라이브러리 -->
+  <link href="./css/swiper-bundle.min.css" rel="stylesheet" type="text/css">
+
+<!-- 03/ 스크립트 -->
+  <script src="./script/javascript.js" defer></script> 
+  <script src="./script/swiper-bundle.min.js" defer></script>
+  <script src="https://code.jquery.com/jquery-3.7.1.min.js"></script>
+  <!-- defer:HTML 다 읽고 난 후 실행 -->
+</head> 
+
+
+
+<body>
+  <!--========================= 상단헤더 영역 시작 =========================-->
+  <header class="pt30">
+    <!-- 로고 -->
+    <h1>
+      <a href="index.html" title="메인페이지로 이동하기">
+        <img src="./images/logo_nike.png" alt="로고_나이키">
+      </a>
+    </h1>
+
+    <!-- 패밀리 싸이트 -->
+    <a href="https://www.nike.com/kr/jordan" target="_blank" title="조던 상품페이지 바로가기">
+      <img src="./images/logo_jordan.png" alt="로고_조던">
+    </a>
+    <a href="https://www.nike.com/w/converse-akmjx" target="_blank" title="컨버스 상품페이지 바로가기">
+      <img src="./images/logo_converse.png" alt="로고_컨버스">
+    </a>
+
+    <!-- 언어 -->
+    <label for="language" class="ir_pm">언어 선택</label>
+    <select name="language" id="language">
+      <option value="red">KOR</option>
+      <option value="green">ENG</option>
+      <option value="blue">JPN</option>
+    </select>
+  </header>
+
+
+  <!--========================= 0. 메인 콘텐츠 =========================-->
+  <main>
+    <article class="main_banner">
+      <!-- 타이틀 -->
+       <div id="txt_con">
+        <h2>
+          한계를 넘어서는 순간
+          <span>JUST DO IT</span>
+        </h2>
+        <p>
+          1971년부터 나이키는 모든 운동선수의 잠재력을 믿어왔습니다.<br>
+          당신의 몸 안에 잠든 운동선수를 깨워보세요.<br>
+          <img src="./images/main_arrow_down.png" alt="아래 화살표">
+        </p>
+       </div>
+
+      <!-- 영상(안되는거) -->
+      <!-- <iframe 
+          src="https://www.youtube.com/embed/b0Ezn5pZE7o?autoplay=1&mute=1&controls=0&loop=1&playlist=b0Ezn5pZE7o&modestbranding=1&disablekb=1&fs=0" 
+          style="border: none;" 
+          allow="autoplay; fullscreen; picture-in-picture"
+          title="나이키 브랜드 소개 영상">
+      </iframe> -->
+
+      <!-- 영상 2 -->
+      <video width="100%" autoplay muted loop>
+        <source src="./movie/just_do_it.mp4" type="video/mp4">
+        <p>이 브라우저에서는 지원되지 않는 콘텐츠가 있습니다. 시스템을 업그레이드 하세요.</p>
+      </video>
+
+      
+    </article>
+  </main>
+
+  <!--========================= 네비게이션 =========================-->
+  <nav>
+    <ul>
+      <li><a href="#branding" title="철학">철학</a></li>
+      <li><a href="#innovation" title="혁신">혁신</a></li>
+      <li><a href="#ambassador" title="앰버서더">앰버서더</a></li>
+      <li><a href="#history" title="역사">역사</a></li>
+      <li><a href="#move" title="지속가능성">지속가능성</a></li>
+      <li><a href="#start" title="시작하기">시작하기</a></li>
+    </ul>
+  </nav>
+
+  <!--========================= 1. 철학 =========================-->
+  <article class="branding"  id="branding">
+    <h2>
+      모든 사람은 운동선수다
+      <span>If You Have a Body, You Are an Athlete</span>
+      <img src="./images/logo_nike2.png" alt="나이키 로고">
+    </h2>
+
+    <div class="right">
+      <p>
+        나이키의 창립자 빌 바우어먼이 남긴 이 철학은 50년이 넘는 시간 동안 우리의 나침반이 되어왔습니다.<br>
+        프로 선수든 주말 조깅족이든, 처음 운동화 끈을 묶는 어린이든 관계없이, 우리는 모든 사람의 운동 여정을 응원합니다.<br>
+        "스포츠에는 사람을 변화시키는 힘이 있다. 영감을 주고, 하나로 만들고, 세상을 바꾸는 힘이 있다."<br>
+        <br>
+        당신의 목표가 무엇이든, 나이키는 그 여정의 동반자가 되겠습니다.
+      </p>
+      <a href="#" class="link_btn">나이키 바로가기</a>
+    </div>
+
+    <div class="infinite_txt">
+      <p>BRING INSPIRATION, INNOVATION TO EVERY ATHLETE IN THE WORLD &nbsp; BRING INSPIRATION, INNOVATION TO EVERY ATHLETE IN THE WORLD</p>
+    </div>
+
+  </article>
+
+  <!--========================= 중간 이미지 =========================-->
+  <div class="mid_img">
+    <img src="./images/main_img.webp" alt="나이키 협업 선수들의 사진">
+  </div>
+
+  <!--========================= 2. 혁신 =========================-->
+  <article class="innovation middle"  id="innovation">
+    <h2><b>혁신은 우리의</b> DNA</h2>
+    <p>한 발 앞선 기술로 당신의 한계를 넓혀갑니다</p>
+    
+    <ul>
+      <li>
+        <img src="./images/innovation_img1.jpg" alt="AIR 기술 이미지">
+        <div>
+          <h3><b>AIR</b> 기술</h3>
+          <p>
+            1979년부터 충격 흡수의 혁명을 이끌어온 에어 쿠셔닝<br>
+            모든 발걸음에 날개를 달아드립니다.
+          </p>
+        </div>
+      </li>
+
+      <li>
+        <img src="./images/innovation_img2.jpg" alt="React 기술 이미지">
+        <div>
+          <h3><b>React</b> 폼</h3>
+          <p>
+            에너지 리턴과 내구성을 동시에 만족시키는 미드솔 기술<br>
+            더 멀리, 더 오래 달릴 수 있습니다.
+          </p>
+        </div>
+      </li>
+
+      <li>
+        <img src="./images/innovation_img3.jpg" alt="Flyknit 기술 이미지">
+        <div>
+          <h3><b>Flyknit</b></h3>
+          <p>
+            실 한 올까지 계산된 편직 기술로 완벽한 핏을 구현<br>
+            마치 양말처럼 편안한 착용감을 경험하세요.
+          </p>
+        </div>
+      </li>
+    </ul>
+  </article>
+
+  <!--========================= 3. 파트너쉽 =========================-->
+  <article class="ambassador" id="ambassador">
+    <h2 class="ir_pm">앰버서더</h2>
+    <p>앰버서더 <span>나이키와 함께한 위대한 영웅들</span></p>
+    
+    <ul>
+      <li data-hero="jordan">Michael Jordan</li>
+      <li data-hero="son">Son Heung-min</li>
+      <li data-hero="ronaldo">Cristiano Ronaldo</li>
+      <li data-hero="serena">Serena Williams</li>
+      <li data-hero="lebron">LeBron James</li>
+      <li data-hero="simone">Simone Biles</li>
+    </ul>
+
+    <div class="change_wrap active">
+      <img src="./images/hero_Jordan.png" alt="선수 이미지" id="heroImage">
+      <dl>
+        <dt id="heroName">마이클 조던</dt>
+        <dd id="heroPosition">농구선수</dd>
+        <dd id="heroAchievement1">6개의 NBA 챔피언십 / 5회 MVP</dd>
+        <dd id="heroAchievement2">NBA 역사상 최고의 선수</dd>
+      </dl>
+    </div>
+
+    <img src="./images/deco.png" class="deco" alt="장식요소">
+    <img src="./images/logo_nike_background.jpg" class="bg-logo" alt="백그라운드 로고">
+  </article>
+
+  <!--========================= 4. 역사 =========================-->
+  <article class="history" id="history">
+    <h2>Innovation<br>Heritage</h2>
+    <p>50년간 이어온 혁신의 발자취, 그 역사</p>
+
+    <div class="right">
+      <img src="./images/history_deco.png" alt="역사 틀 이미지">
+      <dl id="timeline">
+        <dt>1971</dt>
+        <dd>
+          <strong>Blue Ribbon Sports에서 Nike로</strong>
+          <p>빌 바우어먼과 필 나이트가 설립한 작은 회사가 승리의 여신 이름을 따라 Nike로 재탄생했습니다.</p>
+        </dd>
+
+        <dt>1979</dt>
+        <dd>
+          <strong>Air 기술의 탄생</strong>
+          <p>Tailwind와 함께 등장한 Air 쿠셔닝 기술은 운동화 역사를 바꾼 혁신이었습니다.</p>
+        </dd>
+
+        <dt>1985</dt>
+        <dd>
+          <strong>Air Jordan의 시대</strong>
+          <p>마이클 조던과의 파트너십으로 출시된 Air Jordan은 단순한 운동화를 넘어 문화적 아이콘이 되었습니다. </p>
+        </dd>
+
+        <dt>1987</dt>
+        <dd>
+          <strong>Just Do It 슬로건 론칭</strong>
+          <p>단순하지만 강력한 메시지로 전 세계 운동선수들의 마음을 사로잡았습니다.</p>
+        </dd>
+
+        <dt>2012</dt>
+        <dd>
+          <strong>Flyknit 혁신</strong>
+          <p>실 한 올로 직조한 혁신적인 어퍼 구조로 신발 제조의 새로운 패러다임을 제시했습니다.</p>
+        </dd>
+
+        <dt>2015</dt>
+        <dd>
+          <strong>NBA 공식 의류 공급</strong>
+          <p>NBA와의 파트너십을 통해 공식 의류 공급업체로 선정되었습니다.</p>
+        </dd>
+
+        <dt>2016</dt>
+        <dd>
+          <strong>HyperAdapt 1.0 출시</strong>
+          <p>전자식 조절 시스템을 통해 착용자의 발에 맞게 자동으로 조여지는 기능을 제공합니다.</p>
+        </dd>
+
+        <dt>2021</dt>
+        <dd>
+          <strong>Move to Zero 캠페인 확대</strong>
+          <p>탄소 배출 제로 목표로 친환경 혁신 강화</p>
+        </dd>
+      </dl>
+    </div>
+  </article>
+
+  <!--========================= 5. 지속가능성 =========================-->
+  <article class="move middle" id="move">
+    <h2>Move to Zero</h2>
+    <p>지구와 미래 세대를 위한 우리의 약속</p>
+    
+    <ul>
+      <li>
+        <h3><span class="counting" data-count="69">0</span>%</h3>
+        <p>
+          FY20 대비 FY24 기준 나이키 운영 전반의<br>
+          직접(Scope 1) 및 간접(Scope 2)<br>
+          온실가스 절대 배출량 감소율
+        </p>
+      </li>
+
+      <li>
+        <h3><span class="counting" data-count="36">0</span>%</h3>
+        <p>
+          FY20 대비 FY24 기준 나이키 제조 및<br>
+          운송 부문의 기타 간접(Scope 3) 온실가스<br>
+          절대 배출량 36% 감소
+        </p>
+      </li>
+
+      <li>
+        <h3><span class="counting" data-count="86">0</span>%</h3>
+        <p>
+          FY24 기준 나이키 글로벌 운영 부문의 전력<br>
+          사용량 86% 재생에너지로 공급,<br>
+          업체들의 담수 사용량 40% 이상 감소
+        </p>
+      </li>
+
+      <li>
+        <h3><span class="counting" data-count="99">0</span>%</h3>
+        <p>
+          FY24 기준 나이키 전략 완제품<br>
+          공급업체의 운영 과정에서 발생한 폐기물<br>
+          100% 매립 없이 처리
+        </p>
+      </li>
+    </ul>
+  </article>
+
+
+  <!--========================= 6. 시작하기 =========================-->
+  <article class="start middle" id="start">
+    <h2>당신의 여정을 시작하세요</h2>
+    <p>오늘이 바로 그 시작점입니다.</p>
+    
+    <div class="btn_wrap">
+      <a href="#" class="link_btn">나이키 더 알아보기</a>
+      <a href="#" class="link_btn">커스텀 신발 만들기</a>
+      <a href="#" class="link_btn">가까운 매장 찾기</a>
+    </div>
+
+    <footer>
+      <p>당신이 어디에 있든, 어떤 목표를 가지고 있든 나이키가 함께합니다.</p>
+      <p>© 2025 Nike, Inc. All Rights Reserved</p>
+    </footer>
+  </article>
+
+  <script>
+    // const box = document.getElementById('txt_con');
+
+    // function startTxtBox(){
+    //   setTimeout(()=>{
+    //     box.style.display='none';
+
+    //     setTimeout(()=>{
+    //       box.style.display='block';
+
+    //       //반복하고 싶으면 다시 주기 시작
+    //       startTxtBox();
+
+    //     }, 5000);
+
+    //   }, 24000);
+    // }
+
+    // //함수 시작
+    // startTxtBox();
+  </script>
+</body>
+</html>
